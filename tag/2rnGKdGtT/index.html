@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>Stream的groupBy一次实际应用 | mty</title>
+<title>好活儿 | mty</title>
 <meta name="description" content="¿">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -23,7 +23,6 @@
 
   </head>
   <body>
-  
     <nav class="navbar border fixed split-nav">
   <div class="nav-brand">
     <h3><a href="https://mty0313.github.io">mty</a></h3>
@@ -80,107 +79,64 @@
     <div id="top" class="row site">
       <div class="sm-12 md-8 col">
         <div class="paper">
-          <article class="article">
-            <h1>Stream的groupBy一次实际应用</h1>
-            <p class="article-meta">
-              2021-06-09
-              
-                <a href="https://mty0313.github.io/tag/2rnGKdGtT/" class="badge secondary">
-                  好活儿
-                </a>
-              
-            </p>
-            
-            <div class="post-content">
-              <h2 id="描述">描述</h2>
-<p>对于实体A和B, 两者是多对多的关系, 表中column类似xxx_A, xxx_B, xx_A, xx_B, 现因历史原因该表以B为维度存储数据, 前端展示时只是以_A, _B作区分来展示</p>
-<h2 id="问题">问题</h2>
-<p>列表页每一条同样对应详情, 展示B的页面无问题, 但是展示A的页面时, 出现多条记录指向同一详情的现象, 并且多条记录的数据汇总才与详情中的内容对应.</p>
-<h2 id="解决">解决</h2>
-<p>在存数据时对数据进行汇总处理, 这里采用Stream进行group操作, 代码如下:</p>
-<pre><code class="language-java">public class Main {
-
-    public static void main(String[] args) {
-        List&lt;Buss&gt; bussList = new ArrayList&lt;&gt;();
-        bussList.add(new Buss(&quot;a&quot;,10,0.3, 1, 1));
-        bussList.add(new Buss(&quot;b&quot;,3,0.8, 2, 2));
-        bussList.add(new Buss(&quot;c&quot;,5,2.0, 3,3));
-        bussList.add(new Buss(&quot;b&quot;,30,3.2, 4,4));
-        bussList.add(new Buss(&quot;c&quot;,20,0.1, 3,5));
-        bussList.add(new Buss(&quot;c&quot;, 10, 1.5, 3,3));
-        bussList.add(new Buss(&quot;c&quot;, 16, 2.5, 7,7));
-
-        List&lt;Buss&gt; st = new ArrayList&lt;&gt;();
-        bussList.stream()
-                // 模拟需要name和another两个字段确定一条记录的情况
-                .collect(Collectors.groupingBy(Buss::groupField))
-                .forEach((k,v) -&gt; {
-                    Optional&lt;Buss&gt; sum = v.stream().reduce((v1,v2) -&gt; {
-                        v1.setCount(v1.getCount()+v2.getCount());
-                        v1.setValue(v1.getValue()+v2.getValue());
-                        return v1;
-                    });
-                    st.add(sum.orElse(new Buss(&quot;other&quot;, 0, 0.0, 0, -1)));
-                });
-        System.out.println(st);
-    }
-}
-
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
-class Buss {
-
-    private String name;
-    private int count;
-    private double value;
-    private int another;
-    private int id;
-
-    public String groupField() {
-        return this.name + this.another;
-    }
-
-    @Override
-    public String toString() {
-        return &quot;\nBuss{&quot; +
-                &quot;name='&quot; + name + '\'' +
-                &quot;, count=&quot; + count +
-                &quot;, value=&quot; + value +
-                &quot;, another=&quot; + another +
-                &quot;, id=&quot; + id +
-                &quot;}&quot;;
-    }
-}
-</code></pre>
-<p>运行会输出:</p>
-<pre><code class="language-java">Buss{name='c', count=35, value=3.6, another=9, id=3}, 
-Buss{name='b', count=3, value=0.8, another=2, id=2}, 
-Buss{name='a', count=10, value=0.3, another=1, id=1}, 
-Buss{name='b', count=30, value=3.2, another=4, id=4}, 
-Buss{name='c', count=16, value=2.5, another=7, id=7}
-</code></pre>
-
-            </div>
-          </article>
-        </div>
-        <div class="paper" data-aos="fade-in">
+          <h2 class="current-tag">标签: 好活儿</h2>
           
-            <div class="next-post">
-              <div class="next">
-                下一篇
-              </div>
-              <a href="https://mty0313.github.io/post/hello-world/">
-                <h3 class="post-title">
-                  Hello world
-                </h3>
-              </a>
-            </div>
-          
+  <article class="article">
+    <h2 class="article-title">
+      <a href="https://mty0313.github.io/post/groupby-zhi-hou-reduce-de-shi-yong-zhu-yi-dian/">groupBy之后reduce的使用注意点</a>
+    </h2>
+    <p class="article-meta">
+      2021-06-09
+      
+        <a href="https://mty0313.github.io/tag/2rnGKdGtT/" class="badge ">
+          好活儿
+        </a>
+      
+    </p>
+    <p class="text-lead">
+      
+    </p>
+    <div class="row">
+      <a href="https://mty0313.github.io/post/groupby-zhi-hou-reduce-de-shi-yong-zhu-yi-dian/" class="readmore-link">
+        <button>
+          更多
+        </button>
+      </a>
+    </div>
+  </article>
+
+  <article class="article">
+    <h2 class="article-title">
+      <a href="https://mty0313.github.io/post/stream-de-groupby-yi-ci-shi-ji-ying-yong/">Stream的groupBy一次实际应用</a>
+    </h2>
+    <p class="article-meta">
+      2021-06-09
+      
+        <a href="https://mty0313.github.io/tag/2rnGKdGtT/" class="badge warning">
+          好活儿
+        </a>
+      
+    </p>
+    <p class="text-lead">
+      
+    </p>
+    <div class="row">
+      <a href="https://mty0313.github.io/post/stream-de-groupby-yi-ci-shi-ji-ying-yong/" class="readmore-link">
+        <button>
+          更多
+        </button>
+      </a>
+    </div>
+  </article>
+
+
         </div>
-        
+        <div class="row flex-edges">
+  
+  
+</div>
+
       </div>
-
       <div class="sm-12 md-4 col sidebar">
   <div class="paper info-container">
     <img src="https://mty0313.github.io/images/avatar.png?v=1623236185419" class="no-responsive avatar">
@@ -237,11 +193,11 @@ Buss{name='c', count=16, value=2.5, another=7, id=7}
     </div>
     <div class="row">
       
-        <a href="https://mty0313.github.io/tag/2rnGKdGtT/" class="badge secondary">
+        <a href="https://mty0313.github.io/tag/2rnGKdGtT/" class="badge ">
           好活儿
         </a>
       
-        <a href="https://mty0313.github.io/tag/GmiTUcFTm/" class="badge secondary">
+        <a href="https://mty0313.github.io/tag/GmiTUcFTm/" class="badge ">
           demo
         </a>
       
@@ -252,7 +208,6 @@ Buss{name='c', count=16, value=2.5, another=7, id=7}
 苏ICP备18028540号-1</a> | <a class="rss" href="https://mty0313.github.io/atom.xml" target="_blank">RSS</a>
   </div>
 </div>
-
 
     </div>
 
