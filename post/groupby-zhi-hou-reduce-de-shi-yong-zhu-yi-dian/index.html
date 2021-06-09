@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>标签列表 | mty</title>
+<title>groupBy之后reduce的使用注意点 | mty</title>
 <meta name="description" content="¿">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -23,6 +23,7 @@
 
   </head>
   <body>
+  
     <nav class="navbar border fixed split-nav">
   <div class="nav-brand">
     <h3><a href="https://mty0313.github.io">mty</a></h3>
@@ -79,16 +80,68 @@
     <div id="top" class="row site">
       <div class="sm-12 md-8 col">
         <div class="paper">
-          <h2 class="tag-list-title">标签列表</h2>
-          <div class="row tags-container">
+          <article class="article">
+            <h1>groupBy之后reduce的使用注意点</h1>
+            <p class="article-meta">
+              2021-06-09
+              
+            </p>
             
-              <a href="https://mty0313.github.io/tag/GmiTUcFTm/" class="badge warning">
-                demo
-              </a>
-            
-          </div>
+            <div class="post-content">
+              <p>和上一篇中类似的代码, 如下:</p>
+<pre><code class="language-java">List&lt;Buss&gt; st = new ArrayList&lt;&gt;();
+bussList.stream()
+        // 模拟需要name和another两个字段确定一条记录的情况
+        .collect(Collectors.groupingBy(Buss::groupField))
+        .forEach((k,v) -&gt; {
+            Optional&lt;Buss&gt; sum = v.stream().reduce((v1,v2) -&gt; {
+                // 示例
+                v1.setExample(&quot;example value&quot;)
+                
+                v1.setCount(v1.getCount()+v2.getCount());
+                v1.setValue(v1.getValue()+v2.getValue());
+                return v1;
+            });
+            st.add(sum.orElse(new Buss(&quot;other&quot;, 0, 0.0, 0, -1)));
+        });
+System.out.println(st);
+</code></pre>
+<p>这里的使用注意点: 上面setExample()方法, 包括reduce()里面的所有方法, 如果groupingBy出来的结果只有一条, 那么里面的代码不会被执行.</p>
+<ul>
+<li>实际使用中, 我对于几条操作结果进行groupingBy之后, 需要将一些字段累加合并成一条记录, 如果entity中有一个字段用于记录一共合并了多少条记录, 我的做法是首先</li>
+</ul>
+<pre><code class="language-java">Map&lt;String, Long&gt; countMap = dataList.stream().collect(Collectors.groupingBy(Buss::groupField, Collectors.counting()));
+</code></pre>
+<p>计算得出当前<code>groupField</code>下每个field对应的记录条数</p>
+<p>然后这样set:</p>
+<pre><code class="language-java">...
+// 这里 k 就是上面 forEach((k, v) -&gt; {...}) 的 k
+v1.setCount(String.valueOf(countMap.get(k)))
+...
+</code></pre>
+<p>如果当前的groupField下只有一条记录, 那么reduce不会被执行, count始终为null, 多条记录时则可以正常运行.</p>
+<p>最终我给count设置了初始值1, 暂时解决了问题.</p>
+
+            </div>
+          </article>
         </div>
+        <div class="paper" data-aos="fade-in">
+          
+            <div class="next-post">
+              <div class="next">
+                下一篇
+              </div>
+              <a href="https://mty0313.github.io/post/stream-de-groupby-yi-ci-shi-ji-ying-yong/">
+                <h3 class="post-title">
+                  Stream的groupBy一次实际应用
+                </h3>
+              </a>
+            </div>
+          
+        </div>
+        
       </div>
+
       <div class="sm-12 md-4 col sidebar">
   <div class="paper info-container">
     <img src="https://mty0313.github.io/images/avatar.png?v=1623235962869" class="no-responsive avatar">
@@ -145,7 +198,7 @@
     </div>
     <div class="row">
       
-        <a href="https://mty0313.github.io/tag/GmiTUcFTm/" class="badge warning">
+        <a href="https://mty0313.github.io/tag/GmiTUcFTm/" class="badge success">
           demo
         </a>
       
@@ -156,7 +209,8 @@
 苏ICP备18028540号-1</a> | <a class="rss" href="https://mty0313.github.io/atom.xml" target="_blank">RSS</a>
   </div>
 </div>
-  
+
+
     </div>
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
