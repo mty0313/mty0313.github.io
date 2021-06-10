@@ -4,7 +4,7 @@
 <meta name="description" content="" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<title>Rick</title>
+<title>reduce()的使用注意点 | Rick</title>
 
 <link rel="shortcut icon" href="https://mty0313.github.io/favicon.ico?v=1623314444493">
 
@@ -33,11 +33,11 @@
 <!--<script src="media/scripts/index.js"></script>-->
 
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.css">
 </head>
 <body>
 <div class="main gt-bg-theme-color-first">
-    <div class="main-content">
-        <nav class="navbar navbar-expand-lg">
+    <nav class="navbar navbar-expand-lg">
     <div class="navbar-brand">
         <img class="user-avatar" src="/images/avatar.png" alt="头像">
         <div class="site-name gt-c-content-color-first">
@@ -104,87 +104,71 @@
         }
     }
 </script>
-
-        <div class="post-list-container">
-    <div class="post-inner">
-        
-            <div class="post gt-bg-theme-color-second">
-                <div class="post-left">
-                    <div>
-                        
-                            <span class="sticky-top-flag gt-bg-accent-color-first">置顶</span>
-                        
-                        <a href="https://mty0313.github.io/hello-world/">
-                            <span class="post-title gt-c-content-color-first">Hello world</span>
-                        </a>
-                    </div>
-                    <div class="gt-post-content post-abstract gt-c-content-color-second">
-                        
-                    </div>
-                    <div class="post-info">
-                        <time class="post-time gt-c-content-color-first">
-                            发布于 · 2021-06-09 ·
-                        </time>
-                        
-                            <a href="https://mty0313.github.io/GmiTUcFTm/" class="post-tag">
-                                # demo
-                            </a>
-                        
-                    </div>
+    <div class="post-container">
+        <div class="post-detail gt-bg-theme-color-second">
+            <article class="gt-post-content">
+                <h2 class="post-title">
+                    reduce()的使用注意点
+                </h2>
+                <div class="post-info">
+                    <time class="post-time gt-c-content-color-first">
+                        · 2021-06-10 ·
+                    </time>
+                    
                 </div>
+                <div class="post-content">
+                    <p>和上一篇中类似的代码, 如下:</p>
+<pre><code class="language-java">List&lt;Buss&gt; st = new ArrayList&lt;&gt;();
+bussList.stream()
+        // 模拟需要name和another两个字段确定一条记录的情况
+        .collect(Collectors.groupingBy(Buss::groupField))
+        .forEach((k,v) -&gt; {
+            Optional&lt;Buss&gt; sum = v.stream().reduce((v1,v2) -&gt; {
+                // 示例
+                v1.setExample(&quot;example value&quot;)
                 
+                v1.setCount(v1.getCount()+v2.getCount());
+                v1.setValue(v1.getValue()+v2.getValue());
+                return v1;
+            });
+            st.add(sum.orElse(new Buss(&quot;other&quot;, 0, 0.0, 0, -1)));
+        });
+System.out.println(st);
+</code></pre>
+<p>这里的使用注意点: 上面setExample()方法, 包括reduce()里面的所有方法, 如果groupingBy出来的结果只有一条, 那么里面的代码不会被执行.</p>
+<ul>
+<li>实际使用中, 我对于几条操作结果进行groupingBy之后, 需要将一些字段累加合并成一条记录, 如果entity中有一个字段用于记录一共合并了多少条记录, 我的做法是首先</li>
+</ul>
+<pre><code class="language-java">Map&lt;String, Long&gt; countMap = dataList.stream().collect(Collectors.groupingBy(Buss::groupField, Collectors.counting()));
+</code></pre>
+<p>计算得出当前<code>groupField</code>下每个field对应的记录条数</p>
+<p>然后这样set:</p>
+<pre><code class="language-java">...
+// 这里 k 就是上面 forEach((k, v) -&gt; {...}) 的 k
+v1.setCount(String.valueOf(countMap.get(k)))
+...
+</code></pre>
+<p>如果当前的groupField下只有一条记录, 那么reduce不会被执行, count始终为null, 多条记录时则可以正常运行.</p>
+<p>最终我给count设置了初始值1, 暂时解决了问题.</p>
+
+                </div>
+            </article>
+        </div>
+
+        
+            <div class="next-post">
+                <div class="next gt-c-content-color-first">下一篇</div>
+                <a href="https://mty0313.github.io/HxHzXBE10/" class="post-title gt-a-link">
+                    groupingBy的实际应用
+                </a>
             </div>
         
-            <div class="post gt-bg-theme-color-second">
-                <div class="post-left">
-                    <div>
-                        
-                        <a href="https://mty0313.github.io/tO6LB6wEx/">
-                            <span class="post-title gt-c-content-color-first">reduce()的使用注意点</span>
-                        </a>
-                    </div>
-                    <div class="gt-post-content post-abstract gt-c-content-color-second">
-                        
-                    </div>
-                    <div class="post-info">
-                        <time class="post-time gt-c-content-color-first">
-                            发布于 · 2021-06-10 ·
-                        </time>
-                        
-                    </div>
-                </div>
-                
-            </div>
-        
-            <div class="post gt-bg-theme-color-second">
-                <div class="post-left">
-                    <div>
-                        
-                        <a href="https://mty0313.github.io/HxHzXBE10/">
-                            <span class="post-title gt-c-content-color-first">groupingBy的实际应用</span>
-                        </a>
-                    </div>
-                    <div class="gt-post-content post-abstract gt-c-content-color-second">
-                        
-                    </div>
-                    <div class="post-info">
-                        <time class="post-time gt-c-content-color-first">
-                            发布于 · 2021-06-10 ·
-                        </time>
-                        
-                    </div>
-                </div>
-                
-            </div>
-        
-    </div>
-</div>
 
-        <div class="pagination-container">
-    
-    
-</div>
+        
 
+        
+
+        
 
         <div class="site-footer gt-c-content-color-first">
     <div class="slogan gt-c-content-color-first">¿</div>
