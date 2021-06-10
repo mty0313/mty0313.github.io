@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://mty0313.github.io</id>
-    <title>mty</title>
-    <updated>2021-06-10T07:04:33.242Z</updated>
+    <title>Rick</title>
+    <updated>2021-06-10T07:39:54.457Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://mty0313.github.io"/>
     <link rel="self" href="https://mty0313.github.io/atom.xml"/>
     <subtitle>¿</subtitle>
     <logo>https://mty0313.github.io/images/avatar.png</logo>
     <icon>https://mty0313.github.io/favicon.ico</icon>
-    <rights>All rights reserved 2021, mty</rights>
+    <rights>All rights reserved 2021, Rick</rights>
     <entry>
         <title type="html"><![CDATA[groupBy之后reduce的使用注意点]]></title>
         <id>https://mty0313.github.io/groupby-zhi-hou-reduce-de-shi-yong-zhu-yi-dian/</id>
