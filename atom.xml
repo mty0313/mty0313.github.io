@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://mty0313.github.io</id>
     <title>Rick</title>
-    <updated>2021-06-10T08:43:31.730Z</updated>
+    <updated>2021-06-10T08:46:18.429Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://mty0313.github.io"/>
     <link rel="self" href="https://mty0313.github.io/atom.xml"/>
@@ -125,16 +125,6 @@ Buss{name='a', count=10, value=0.3, another=1, id=1},
 Buss{name='b', count=30, value=3.2, another=4, id=4}, 
 Buss{name='c', count=16, value=2.5, another=7, id=7}
 </code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Hello world]]></title>
-        <id>https://mty0313.github.io/hello-world/</id>
-        <link href="https://mty0313.github.io/hello-world/">
-        </link>
-        <updated>2021-06-09T10:09:51.000Z</updated>
-        <content type="html"><![CDATA[<p>每次开始搞个什么demo都是hello world<br>
-<img src="https://mty0313.github.io/post-images/1623235051034.jpg" alt="" loading="lazy"></p>
 ]]></content>
     </entry>
 </feed>
