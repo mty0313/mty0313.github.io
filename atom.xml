@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://mty0313.github.io</id>
     <title>Wubalubadubdub</title>
-    <updated>2021-06-17T10:37:17.064Z</updated>
+    <updated>2021-06-17T10:40:04.851Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://mty0313.github.io"/>
     <link rel="self" href="https://mty0313.github.io/atom.xml"/>
@@ -16,23 +16,32 @@
         <link href="https://mty0313.github.io/4RFITwhCS/">
         </link>
         <updated>2021-06-17T10:16:00.000Z</updated>
-        <content type="html"><![CDATA[<p>统计日期截至2021-06-17<br>
-总体:<br>
-<img src="http://ww1.sinaimg.cn/large/006CYcBPgy1grlfpdljxbj60rt04emx002.jpg" referrerpolicy="no-referrer"></p>
-<p>距离第一次在gitlab提交已经336天<br>
-一共提交代码915次<br>
-最多的一天: 2021-06-04, 提交了36次<br>
-有171天都提交了代码</p>
-<p>按年份统计结果:<br>
-<img src="http://ww1.sinaimg.cn/large/006CYcBPgy1grlftja3osj60dw0dw74d02.jpg" alt="year.png" loading="lazy"><br>
-去年的提交相对少一些</p>
-<p>按月份统计结果:<br>
-<img src="http://ww1.sinaimg.cn/large/006CYcBPgy1grlftvvfl9j60xc0got9f02.jpg" alt="month.png" loading="lazy"><br>
-2021-06 有趋势成为最多的一个月</p>
-<p>按每天的统计结果:<br>
-<img src="http://ww1.sinaimg.cn/large/006CYcBPgy1grlfu4vt6uj60go0godg902.jpg" alt="day.png" loading="lazy"><br>
-每个周一都是提交代码最多的时候, 周二就摸鱼一些, 后面保持基本平稳, 周末也来加过几次班</p>
-]]></content>
+        <content type="html"><![CDATA[<p>统计日期截至2021-06-17</p>
+<h2 id="总体">总体:</h2>
+<img src="http://ww1.sinaimg.cn/large/006CYcBPgy1grlfpdljxbj60rt04emx002.jpg" referrerpolicy="no-referrer">
+<ul>
+<li>
+<p>距离第一次在gitlab提交已经336天</p>
+</li>
+<li>
+<p>一共提交代码915次</p>
+</li>
+<li>
+<p>最多的一天: 2021-06-04, 提交了36次</p>
+</li>
+<li>
+<p>有171天都提交了代码</p>
+</li>
+</ul>
+<h2 id="按年份统计结果">按年份统计结果:</h2>
+<img src="http://ww1.sinaimg.cn/large/006CYcBPgy1grlftja3osj60dw0dw74d02.jpg" referrerpolicy="no-referrer">
+去年的提交相对少一些
+<h2 id="按月份统计结果">按月份统计结果:</h2>
+<img src="http://ww1.sinaimg.cn/large/006CYcBPgy1grlftvvfl9j60xc0got9f02.jpg" referrerpolicy="no-referrer">
+2021-06 有趋势成为最多的一个月
+<h2 id="按每天的统计结果">按每天的统计结果:</h2>
+<img src="http://ww1.sinaimg.cn/large/006CYcBPgy1grlfu4vt6uj60go0godg902.jpg" referrerpolicy="no-referrer">
+每个周一都是提交代码最多的时候, 周二就摸鱼一些, 后面保持基本平稳, 周末也来加过几次班]]></content>
     </entry>
     <entry>
         <title type="html"><![CDATA[reduce()的使用注意点]]></title>
