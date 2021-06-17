@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://mty0313.github.io</id>
     <title>Wubalubadubdub</title>
-    <updated>2021-06-10T10:18:14.750Z</updated>
+    <updated>2021-06-17T10:32:32.932Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://mty0313.github.io"/>
     <link rel="self" href="https://mty0313.github.io/atom.xml"/>
@@ -10,6 +10,30 @@
     <logo>https://mty0313.github.io/images/avatar.png</logo>
     <icon>https://mty0313.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, Wubalubadubdub</rights>
+    <entry>
+        <title type="html"><![CDATA[gitlab commits统计]]></title>
+        <id>https://mty0313.github.io/4RFITwhCS/</id>
+        <link href="https://mty0313.github.io/4RFITwhCS/">
+        </link>
+        <updated>2021-06-17T10:16:00.000Z</updated>
+        <content type="html"><![CDATA[<p>统计日期截至2021-06-17<br>
+总体:<br>
+<img src="http://ww1.sinaimg.cn/large/006CYcBPgy1grlfpdljxbj60rt04emx002.jpg" alt="commits.png" loading="lazy"></p>
+<p>距离第一次在gitlab提交已经336天<br>
+一共提交代码915次<br>
+最多的一天: 2021-06-04, 提交了36次<br>
+有171天都提交了代码</p>
+<p>按年份统计结果:<br>
+<img src="http://ww1.sinaimg.cn/large/006CYcBPgy1grlftja3osj60dw0dw74d02.jpg" alt="year.png" loading="lazy"><br>
+去年的提交相对少一些</p>
+<p>按月份统计结果:<br>
+<img src="http://ww1.sinaimg.cn/large/006CYcBPgy1grlftvvfl9j60xc0got9f02.jpg" alt="month.png" loading="lazy"><br>
+2021-06 有趋势成为最多的一个月</p>
+<p>按每天的统计结果:<br>
+<img src="http://ww1.sinaimg.cn/large/006CYcBPgy1grlfu4vt6uj60go0godg902.jpg" alt="day.png" loading="lazy"><br>
+每个周一都是提交代码最多的时候, 周二就摸鱼一些, 后面保持基本平稳, 周末也来加过几次班</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[reduce()的使用注意点]]></title>
         <id>https://mty0313.github.io/tO6LB6wEx/</id>
