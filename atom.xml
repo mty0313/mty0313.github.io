@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://mty0313.github.io</id>
     <title>Wubalubadubdub</title>
-    <updated>2021-06-18T02:15:46.628Z</updated>
+    <updated>2021-06-18T02:18:37.113Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://mty0313.github.io"/>
     <link rel="self" href="https://mty0313.github.io/atom.xml"/>
@@ -16,8 +16,8 @@
         <link href="https://mty0313.github.io/4RFITwhCS/">
         </link>
         <updated>2021-06-17T10:16:00.000Z</updated>
-        <content type="html"><![CDATA[<p>统计日期截至2021-06-17<br>
-刚入行的低级搬砖工, 虽然同样不认同代码量代表工作质量, 但是提交的次数还是可以一定程度上反应一些有趣的事实.</p>
+        <content type="html"><![CDATA[<p>统计日期截至2021-06-17</p>
+<p>刚入行的低级搬砖工, 虽然同样不认同代码量代表工作质量, 但是提交的次数还是可以一定程度上反应一些有趣的事实.</p>
 <h2 id="总体">总体:</h2>
 <img src="http://ww1.sinaimg.cn/large/006CYcBPgy1grlfpdljxbj60rt04emx002.jpg" referrerpolicy="no-referrer">
 <ul>
@@ -36,16 +36,16 @@
 </ul>
 <h2 id="按年份统计结果">按年份统计结果:</h2>
 <img src="http://ww1.sinaimg.cn/large/006CYcBPgy1grlftja3osj60dw0dw74d02.jpg" referrerpolicy="no-referrer">
-两个年份都是差不多6个月, 21年的提交更多些
+<p>两个年份都是差不多6个月, 21年的提交更多些</p>
 <h2 id="按月份统计结果">按月份统计结果:</h2>
 <img src="http://ww1.sinaimg.cn/large/006CYcBPgy1grlftvvfl9j60xc0got9f02.jpg" referrerpolicy="no-referrer">
-2021-06 有趋势成为最多的一个月
+<p>2021-06 有趋势成为最多的一个月</p>
 <ul>
 <li>最近跑了几个人, 人么又招不到</li>
 </ul>
 <h2 id="按每天的统计结果">按每天的统计结果:</h2>
 <img src="http://ww1.sinaimg.cn/large/006CYcBPgy1grlfu4vt6uj60go0godg902.jpg" referrerpolicy="no-referrer">
-每个周一都是提交代码最多的时候, 周二就摸鱼一些, 后面保持基本平稳
+<p>每个周一都是提交代码最多的时候, 周二就摸鱼一些, 后面保持基本平稳</p>
 <ul>
 <li>
 <p>这个趋势也是比较有趣的, 虽然并没有明显感知, 但是就是这样被如实记录了</p>
