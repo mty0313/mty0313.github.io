@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://mty0313.github.io</id>
     <title>Wubalubadubdub</title>
-    <updated>2021-06-18T02:11:36.355Z</updated>
+    <updated>2021-06-18T02:15:46.628Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://mty0313.github.io"/>
     <link rel="self" href="https://mty0313.github.io/atom.xml"/>
@@ -16,7 +16,8 @@
         <link href="https://mty0313.github.io/4RFITwhCS/">
         </link>
         <updated>2021-06-17T10:16:00.000Z</updated>
-        <content type="html"><![CDATA[<p>统计日期截至2021-06-17</p>
+        <content type="html"><![CDATA[<p>统计日期截至2021-06-17<br>
+刚入行的低级搬砖工, 虽然同样不认同代码量代表工作质量, 但是提交的次数还是可以一定程度上反应一些有趣的事实.</p>
 <h2 id="总体">总体:</h2>
 <img src="http://ww1.sinaimg.cn/large/006CYcBPgy1grlfpdljxbj60rt04emx002.jpg" referrerpolicy="no-referrer">
 <ul>
