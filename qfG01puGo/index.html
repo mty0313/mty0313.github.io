@@ -4,7 +4,7 @@
 <meta name="description" content="" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<title>上班一年git commits统计 | Wubalubadubdub</title>
+<title>MyBatis Plus 默认不更新Null值 | Wubalubadubdub</title>
 
 <link rel="shortcut icon" href="https://mty0313.github.io/favicon.ico?v=1625122997791">
 
@@ -100,61 +100,22 @@
         <div class="post-detail gt-bg-theme-color-second">
             <article class="gt-post-content">
                 <h2 class="post-title">
-                    上班一年git commits统计
+                    MyBatis Plus 默认不更新Null值
                 </h2>
                 <div class="post-info">
                     <time class="post-time gt-c-content-color-first">
-                        · 2021-06-17 ·
+                        · 2021-06-28 ·
                     </time>
-                    
-                        <a href="https://mty0313.github.io/7e3a5-7Hc/" class="post-tags">
-                            # 好van
-                        </a>
                     
                 </div>
                 <div class="post-content">
-                    <p>统计日期截至2021-06-17</p>
-<p>刚入行的低级搬砖工, 虽然同样不认同代码量代表工作质量, 但是提交的次数还是可以一定程度上反应一些有趣的事实.</p>
-<h2 id="总体">总体:</h2>
-<img src="http://ww1.sinaimg.cn/large/006CYcBPgy1grlfpdljxbj60rt04emx002.jpg" referrerpolicy="no-referrer">
-<ul>
-<li>
-<p>距离第一次提交已经336天</p>
-</li>
-<li>
-<p>一共提交代码915次</p>
-</li>
-<li>
-<p>最多的一天: 2021-06-04, 提交了36次</p>
-</li>
-<li>
-<p>有171天都提交了代码</p>
-</li>
-</ul>
-<h2 id="按年份统计结果">按年份统计结果:</h2>
-<img src="http://ww1.sinaimg.cn/large/006CYcBPgy1grlftja3osj60dw0dw74d02.jpg" referrerpolicy="no-referrer">
-<p>两个年份都是差不多6个月, 21年的提交更多些</p>
-<h2 id="按月份统计结果">按月份统计结果:</h2>
-<img src="http://ww1.sinaimg.cn/large/006CYcBPgy1grlftvvfl9j60xc0got9f02.jpg" referrerpolicy="no-referrer">
-<p>2021-06 有趋势成为最多的一个月</p>
-<ul>
-<li>最近跑了几个人, 人么又招不到</li>
-</ul>
-<h2 id="按每天的统计结果">按每天的统计结果:</h2>
-<img src="http://ww1.sinaimg.cn/large/006CYcBPgy1grlfu4vt6uj60go0godg902.jpg" referrerpolicy="no-referrer">
-<p>每个周一都是提交代码最多的时候, 周二就摸鱼一些, 后面保持基本平稳</p>
-<ul>
-<li>
-<p>这个趋势也是比较有趣的, 虽然并没有明显感知, 但是就是这样被如实记录了</p>
-</li>
-<li>
-<p>我也拿同事的提交记录生成过, 结果是有的人是周三是一个明显的commit高峰, 有的人就整个周都比较平均</p>
-</li>
-<li>
-<p>周末也来加过几次班</p>
-</li>
-</ul>
-
+                    <p>代码中需要将entity某个字段更新为null, debug发现成功set, 但是update之后并没有在表中体现.查询网上文章后得知, 默认不更新null值, 需要加额外annotation.</p>
+<pre><code class="language-java">@TableField(value = &quot;xxx&quot;, strategy = FieldStrategy.IGNORED)
+private Long xxx;
+</code></pre>
+<p>在mybatis-plus的文档中找到了出处:</p>
+<img src="http://ww1.sinaimg.cn/large/006CYcBPgy1gs1gltrojtj60it07c3yt02.jpg"/>
+<img src="http://ww1.sinaimg.cn/large/006CYcBPgy1gs1gmvdlezj60kg0n53zv02.jpg"/>
                 </div>
             </article>
         </div>
@@ -162,8 +123,8 @@
         
             <div class="next-post">
                 <div class="next gt-c-content-color-first">下一篇</div>
-                <a href="https://mty0313.github.io/tO6LB6wEx/" class="post-title gt-a-link">
-                    reduce()的使用注意点
+                <a href="https://mty0313.github.io/4RFITwhCS/" class="post-title gt-a-link">
+                    上班一年git commits统计
                 </a>
             </div>
         
