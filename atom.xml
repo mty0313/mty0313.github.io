@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://mty0313.github.io</id>
     <title>Wubalubadubdub</title>
-    <updated>2021-07-07T07:10:59.292Z</updated>
+    <updated>2021-07-07T07:13:20.350Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://mty0313.github.io"/>
     <link rel="self" href="https://mty0313.github.io/atom.xml"/>
@@ -21,8 +21,9 @@
 private Long xxx;
 </code></pre>
 <p>在mybatis-plus的文档中找到了出处:</p>
-<img src="http://ww1.sinaimg.cn/large/006CYcBPgy1gs1gltrojtj60it07c3yt02.jpg"/>
-<img src="http://ww1.sinaimg.cn/large/006CYcBPgy1gs1gmvdlezj60kg0n53zv02.jpg"/>]]></content>
+<p>&lt;img src=&quot;http://ww1.sinaimg.cn/large/006CYcBPgy1gs1gltrojtj60it07c3yt02.jpg&quot;/referrerpolicy=&quot;no-referrer&quot;&gt;</p>
+<p>&lt;img src=&quot;http://ww1.sinaimg.cn/large/006CYcBPgy1gs1gmvdlezj60kg0n53zv02.jpg&quot;/referrerpolicy=&quot;no-referrer&quot;&gt;</p>
+]]></content>
     </entry>
     <entry>
         <title type="html"><![CDATA[上班一年git commits统计]]></title>
