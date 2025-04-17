@@ -2,4 +2,5 @@
 layout: home
 title: 首页
 ---
-contents TBD
+
+This message is used to verify that this feed (feedId:135645886073104384) belongs to me (userId:129357719448934400). Join me in enjoying the next generation information browser https://follow.is.
